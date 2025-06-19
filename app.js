@@ -30,10 +30,12 @@ jsonData.forEach(travel => {
             "id" : `${travel.id}`,
             "travels" : jsonData
         });
-    })
+    });
+});
+
+app.get("/admin", (req, res) => {
+    res.render("admin", {jsonData});
 })
-
-
 
 
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
