@@ -20,5 +20,34 @@ p {
 
 img {
     width: 100%;
-    
+
+}
+
+nav {
+    background-color: steelblue;
+    margin-bottom: 2rem;
+
+    ul {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+            list-style: none;
+            padding: 1rem;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color: black; 
+                    border-bottom: 1px solid black;                   
+                }
+            }
+        }
+
+    }
 }
