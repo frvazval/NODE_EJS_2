@@ -28,7 +28,46 @@ main {
         }
 
         td {
+            padding: .4rem;
+        }
+    }
+
+    form {
+        padding: .4rem;
+        border: 1px solid black;
+        border-radius: 10px;
+
+        label {
+            display: block;            
+        }
+
+        input {
+            padding: .4rem;
+            width: 100%;
+        }
+
+        div {
+            margin: .4rem;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
             padding: .5rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button[type="submit"] {
+            background-color: lightgreen;            
+        }
+
+        button[type="reset"] {
+            background-color: lightsalmon;
         }
     }
 }
