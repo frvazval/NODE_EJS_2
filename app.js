@@ -73,5 +73,9 @@ app.delete("/delete/:id", (req, res) => {
 
 })
 
+app.put("update/:id", (req, res) => {
+    const idUpdate = req.params.id
+    console.log(idUpdate)
+})
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
 

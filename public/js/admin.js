@@ -41,6 +41,18 @@ dataUpdate.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(dataUpdate);
     const datosFormulario = Object.fromEntries(formData);
-    console.log(datosFormulario);
+    // console.log(datosFormulario);
 
-})
+    fetch(`update/${datosFormulario.id}`,
+        { method : "PUT",
+            headers : {"content-type" : "application/json"},
+            body : JSON.stringify(datosFormulario)
+
+    })
+    .then (response => response.json())
+    .then (result => {
+        console.log(result);
+        // location.reload();
+    })
+    .catch(err => console.log("Error:", err))
+});
