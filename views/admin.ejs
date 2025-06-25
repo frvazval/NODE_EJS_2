@@ -58,7 +58,7 @@
                         <td><%= travel.nombre %></td>
                         <td><%= travel.precio %></td>
                         <td><button tittle="Editar viaje">🖊</button></td>
-                        <td><button tittle="Borrar viaje">❌</button></td>
+                        <td><button tittle="Borrar viaje" onclick="deleteTravel(`<%= travel.id %>`)">❌</button></td>
                     </tr>
                 <% }) %> 
             </table>
