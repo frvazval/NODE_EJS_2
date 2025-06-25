@@ -23,8 +23,9 @@ function editTravel(travel) {
     sectionUpdate.style.display = "block";
     
     const newTravel = JSON.parse(travel)
-    console.log(newTravel);
+    // console.log(newTravel);
 
+    document.getElementById("update_id").value = newTravel.id;
     document.getElementById("update_ruta").value = newTravel.ruta;
     document.getElementById("update_lugar").value = newTravel.lugar;
     document.getElementById("update_nombre").value = newTravel.nombre;
