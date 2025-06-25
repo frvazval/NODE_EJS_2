@@ -57,6 +57,10 @@ app.post("/insert", (req, res) => {
 
 })
 
+app.delete("/delete/:id", (req, res) => {
+    const idDelete = req.params.id
+    console.log("El id es", idDelete);
+})
 
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
 
