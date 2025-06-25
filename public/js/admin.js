@@ -5,6 +5,6 @@ function deleteTravel(id) {
     })
     .then (response => response.json())
     .then (data => {
-        location.reload()
+        setTimeout(() => location.reload(), 300)        
     })
 }
