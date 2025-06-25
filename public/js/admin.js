@@ -1,6 +1,7 @@
 const sectionInsert = document.getElementById("insert");
 const sectionUpdate = document.getElementById("update");
 sectionUpdate.style.display= "none";
+const formUpdate = document.forms['update'];
 
 
 function deleteTravel(id) {
