@@ -3,8 +3,12 @@ function deleteTravel(id) {
     fetch (`/delete/${id}`, {
         method: "delete"
     })
-    .then (response => response.json())
+    .then (response => {
+        response.json()       
+       })
     .then (data => {
-        setTimeout(() => location.reload(), 300)        
+        location.reload();
+      
+        // setTimeout(() => location.reload(), 300);        
     })
 }
