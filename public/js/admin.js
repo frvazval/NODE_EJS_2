@@ -1,7 +1,8 @@
 const sectionInsert = document.getElementById("insert");
 const sectionUpdate = document.getElementById("update");
 sectionUpdate.style.display= "none";
-const formUpdate = document.forms['update'];
+const dataUpdate = document.getElementById('dataUpdate');
+
 
 
 function deleteTravel(id) {
@@ -27,8 +28,7 @@ function editTravel(travel) {
 
     
     document.getElementById("update_id").value = newTravel.id;
-    document.getElementById("update_ruta").value = newTravel.ruta;
-    
+    document.getElementById("update_ruta").value = newTravel.ruta;    
     document.getElementById("update_lugar").value = newTravel.lugar;
     document.getElementById("update_nombre").value = newTravel.nombre;
     document.getElementById("update_descripcion").value = newTravel.descripcion;
@@ -36,3 +36,11 @@ function editTravel(travel) {
     document.getElementById("update_img").value = newTravel.img;
     
 }
+
+dataUpdate.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(dataUpdate);
+    const datosFormulario = Object.fromEntries(formData);
+    console.log(datosFormulario);
+
+})
