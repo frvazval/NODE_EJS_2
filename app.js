@@ -61,10 +61,15 @@ app.delete("/delete/:id", (req, res) => {
     const idDelete = req.params.id
     // console.log("El id es", idDelete);
     const newJsonData = jsonData.filter(travel => travel.id != idDelete);
-    jsonData = newJsonData;
-    console.log(newJsonData);
+    
     fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8");
-    res.redirect("/admin");
+    jsonData.length = 0;
+    
+    newJsonData.forEach(travel => {
+        jsonData.push(travel)
+    })   
+
+    res.json({"mensaje":"Elemento borrado correctamente"})
 
 })
 

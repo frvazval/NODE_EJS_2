@@ -7,8 +7,7 @@ function deleteTravel(id) {
         response.json()       
        })
     .then (data => {
-        location.reload();
-      
+        location.reload();      
         // setTimeout(() => location.reload(), 300);        
-    })
+    }).catch(err => console.log(err))
 }
