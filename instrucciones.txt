@@ -1,2 +1,0 @@
-npn init
-npm i express ejs
