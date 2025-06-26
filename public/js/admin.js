@@ -43,7 +43,7 @@ dataUpdate.addEventListener('submit', (event) => {
     const datosFormulario = Object.fromEntries(formData);
     // console.log(datosFormulario);
 
-    fetch(`update/${datosFormulario.update_id}`,
+    fetch(`/update/${datosFormulario.update_id}`,
         { method : "PUT",
             headers : {"content-type" : "application/json"},
             body : JSON.stringify(datosFormulario)
