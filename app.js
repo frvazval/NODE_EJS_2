@@ -20,7 +20,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // CARGAR LOS DATOS
-const jsonData = require('./data/travels.json');
+const jsonDataInicial = require('./data/travels.json');
+const jsonData = jsonDataInicial.sort((a, b) => a.lugar.localeCompare(b.lugar, "es", {numeric:true}))
+
+
 // console.log(jsonData);
 jsonData.forEach(travel => {
     // RUTAS

@@ -61,7 +61,7 @@ dataUpdate.addEventListener('submit', (event) => {
     })
     .then (response => response.json())
     .then (result => {
-        // console.log(result);
+        console.log(result);
         location.reload();
     })
     .catch(err => console.log("Error:", err))
