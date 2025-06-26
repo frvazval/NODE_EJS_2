@@ -21,8 +21,7 @@ app.use(express.json());
 
 // CARGAR LOS DATOS
 const jsonDataInicial = require('./data/travels.json');
-const jsonData = jsonDataInicial.sort((a, b) => a.lugar.localeCompare(b.lugar, "es", {numeric:true}))
-
+const jsonData = jsonDataInicial.sort((a, b) => a.lugar.localeCompare(b.lugar, "es", {numeric:true}));
 
 // console.log(jsonData);
 jsonData.forEach(travel => {
@@ -85,12 +84,16 @@ app.put("/update/:id", (req, res) => {
     // si en el for utilizo in, recorre las claves , pero si utilizo of receorre los objetos
     for (dato of jsonData) {
         if (dato.id == body.id) {
-            dato.ruta = body.ruta;
-            dato.nombre = body.nombre;
-            dato.descripcion = body.descripcion;
-            dato.lugar = body.lugar;
-            dato.precio = parseFloat(body.precio);
-            dato.img = body.img;
+            for (clave in dato) {
+                dato[clave] = body[clave];
+            }
+            break;
+            // dato.ruta = body.ruta;
+            // dato.nombre = body.nombre;
+            // dato.descripcion = body.descripcion;
+            // dato.lugar = body.lugar;
+            // dato.precio = parseFloat(body.precio);
+            // dato.img = body.img;
         }
     }
     fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
