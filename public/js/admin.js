@@ -41,13 +41,12 @@ dataUpdate.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(dataUpdate);
     const datosFormulario = Object.fromEntries(formData);
-    // console.log(datosFormulario);
+    console.log(datosFormulario);
 
     fetch(`/update/${datosFormulario.update_id}`,
         { method : "PUT",
             headers : {"content-type" : "application/json"},
             body : JSON.stringify(datosFormulario)
-
     })
     .then (response => response.json())
     .then (result => {
