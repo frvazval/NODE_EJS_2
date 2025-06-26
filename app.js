@@ -5,6 +5,8 @@ const crypto = require('node:crypto');
 const express = require('express'); // Sintaxis commonjs
 const app = express();
 
+const {deleteItem, writeTravelsJSON} = require('./utils/funciones');
+
 // PUERTO DE CONEXION
 process.loadEnvFile();
 const PORT = process.env.PORT;
@@ -62,7 +64,8 @@ app.post("/insert", (req, res) => {
 app.delete("/delete/:id", (req, res) => {
     const idDelete = req.params.id
     // console.log("El id es", idDelete);
-    const newJsonData = jsonData.filter(travel => travel.id != idDelete);
+    // const newJsonData = jsonData.filter(travel => travel.id != idDelete);
+    const newJsonData = deleteItem(jsonData, idDelete);
     
     fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8");
     jsonData.length = 0;
