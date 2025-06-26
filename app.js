@@ -79,18 +79,21 @@ app.put("/update/:id", (req, res) => {
     const body = req.body;    
     console.log(body);   
    
-    for (dato in jsonData) {
+    for (dato of jsonData) {
         if (dato.id == body.id) {
             dato.ruta = body.ruta;
             dato.nombre = body.nombre;
             dato.descripcion = body.descripcion;
             dato.lugar = body.lugar;
-            dato.precio = body.precio;
+            dato.precio = parseFloat(body.precio);
             dato.img = body.img;
         }
     }
-    
-    console.log("jsonData",jsonData);
+    fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
+
+    // console.log("jsonData",jsonData);
+
+    res.json({"Respuesta" : "Modificado correctamente"})
 
 })
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
