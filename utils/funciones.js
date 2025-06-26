@@ -1,5 +1,5 @@
 function deleteItem (jsonData, idParam) {
-   return newJsonData = json.filter(travel => travel.id != idParam);
+   return newJsonData = jsonData.filter(travel => travel.id != idParam);
 }
 
 function writeTravelsJSON (jsonData) {
