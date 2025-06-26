@@ -79,6 +79,7 @@ app.put("/update/:id", (req, res) => {
     const body = req.body;    
     console.log(body);   
    
+    // si en el for utilizo in, recorre las claves , pero si utilizo of receorre los objetos
     for (dato of jsonData) {
         if (dato.id == body.id) {
             dato.ruta = body.ruta;
