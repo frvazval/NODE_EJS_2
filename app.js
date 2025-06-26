@@ -77,6 +77,7 @@ app.put("/update/:id", (req, res) => {
     const idUpdate = req.params.id
     // console.log(idUpdate)
     const body = req.body;
+    
     console.log(body);
 })
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
