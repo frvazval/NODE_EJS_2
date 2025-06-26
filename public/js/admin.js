@@ -43,7 +43,7 @@ dataUpdate.addEventListener('submit', (event) => {
     const datosFormulario = Object.fromEntries(formData);
     // console.log(datosFormulario);
 
-    let newObject = {}
+    // let newObject = {}
 
     // for (clave in datosFormulario) {
     //     const claveLimpia = clave.replace("update_", "");
@@ -51,10 +51,13 @@ dataUpdate.addEventListener('submit', (event) => {
     // }
     // console.log(newObject);
 
+    let newString = JSON.stringify(datosFormulario).replaceAll('update_', "");
+    // console.log('newString',newString);
+
     fetch(`/update/${datosFormulario.update_id}`,
         { method : "PUT",
             headers : {"content-type" : "application/json"},
-            body : JSON.stringify(newObject)
+            body : newString
     })
     .then (response => response.json())
     .then (result => {
