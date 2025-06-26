@@ -67,6 +67,7 @@ app.delete("/delete/:id", (req, res) => {
     // const newJsonData = jsonData.filter(travel => travel.id != idDelete);
     const newJsonData = deleteItem(jsonData, idDelete);
     
+    // writeTravelsJSON(newJsonData);
     fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8");
     jsonData.length = 0;
     
@@ -88,8 +89,9 @@ app.put("/update/:id", (req, res) => {
     for (dato of jsonData) {
         if (dato.id == body.id) {
             for (clave in dato) {
-                dato[clave] = body[clave];
-            }
+                if (clave == "precio") dato[clave] = parseFloat(body['precio'])
+                else dato[clave] = body[clave]                            
+            }            
             break;
             // dato.ruta = body.ruta;
             // dato.nombre = body.nombre;

@@ -9,24 +9,6 @@
     "img": "https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    "id": 3,
-    "ruta": "/egipto",
-    "lugar": "Egipto",
-    "nombre": "Descubriendo Egipto",
-    "descripcion": "15 días de viaje, con crucero incluido por el Nilo y vuelos incluidos",
-    "precio": 960.75,
-    "img": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "ruta": "/islandia",
-    "lugar": "Islandia",
-    "nombre": "Islandia sin limites",
-    "descripcion": "Todo incluido, hotel, excursiones, etc...",
-    "precio": 6000,
-    "img": "https://media.istockphoto.com/id/1629533738/es/foto/cascada-godafoss-que-fluye-con-un-colorido-cielo-al-atardecer-y-un-turista-masculino-parado-en.jpg?s=2048x2048&w=is&k=20&c=LA8chUJ6Y4HGN2e6N2DmmwzFLbf0jaImcvW6PKNn3Fc=",
-    "id": "37169160-cb18-448e-8420-952f729a9c37"
-  },
-  {
     "id": 4,
     "ruta": "/nuevayork",
     "lugar": "Nueva York",
@@ -36,21 +18,12 @@
     "img": "https://images.unsplash.com/photo-1602940659697-ec0ffdafb09d?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    "id": 5,
+    "id": "5",
     "ruta": "/venecia",
     "lugar": "Venecia",
     "nombre": "La bella Venecia",
     "descripcion": "5 días de viaje, con hotel en el Gran Canal y vuelos incluidos",
-    "precio": 1467.78,
+    "precio": 4000,
     "img": "https://images.unsplash.com/photo-1558271736-cd043ef2e855?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "id": 6,
-    "ruta": "/vietnam",
-    "lugar": "Vietnam",
-    "nombre": "La magia de Vietnam",
-    "descripcion": "16 días de viaje, con hoteles de lujo y vuelos incluidos",
-    "precio": 989.78,
-    "img": "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]
