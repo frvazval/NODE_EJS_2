@@ -77,9 +77,21 @@ app.put("/update/:id", (req, res) => {
     const idUpdate = req.params.id
     // console.log(idUpdate)
     const body = req.body;    
-    console.log(body);
-
+    console.log(body);   
+   
+    for (dato in jsonData) {
+        if (dato.id == body.id) {
+            dato.ruta = body.ruta;
+            dato.nombre = body.nombre;
+            dato.descripcion = body.descripcion;
+            dato.lugar = body.lugar;
+            dato.precio = body.precio;
+            dato.img = body.img;
+        }
+    }
     
+    console.log("jsonData",jsonData);
+
 })
 app.listen(PORT, () => {console.log(`servidor levantado en http://localhost:${PORT}`);})
 
