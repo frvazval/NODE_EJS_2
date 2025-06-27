@@ -1,6 +1,6 @@
 // DEPENDENCIAS DEL PROYECTO
 const path = require('node:path');
-const fs = require('node:fs');
+// const fs = require('node:fs');
 const crypto = require('node:crypto');
 const express = require('express'); // Sintaxis commonjs
 const app = express();
@@ -56,7 +56,8 @@ app.post("/insert", (req, res) => {
     newTravel.id = crypto.randomUUID();
     jsonData.push(newTravel);
     // console.log(jsonData);
-    fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
+    writeTravelsJSON(jsonData);
+    // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
     res.redirect("/admin");  
 
 })
@@ -67,8 +68,8 @@ app.delete("/delete/:id", (req, res) => {
     // const newJsonData = jsonData.filter(travel => travel.id != idDelete);
     const newJsonData = deleteItem(jsonData, idDelete);
     
-    // writeTravelsJSON(newJsonData);
-    fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8");
+    writeTravelsJSON(newJsonData);
+    // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8");
     jsonData.length = 0;
     
     newJsonData.forEach(travel => {
@@ -101,7 +102,9 @@ app.put("/update/:id", (req, res) => {
             // dato.img = body.img;
         }
     }
-    fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
+
+    writeTravelsJSON(jsonData);
+    // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
 
     // console.log("jsonData",jsonData);
 
