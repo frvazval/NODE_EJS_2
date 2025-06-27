@@ -1,11 +1,11 @@
 // DEPENDENCIAS DEL PROYECTO
 const path = require('node:path');
 // const fs = require('node:fs');
-const crypto = require('node:crypto');
+
 const express = require('express'); // Sintaxis commonjs
 const app = express();
 
-const {deleteItem, writeTravelsJSON} = require('./utils/funciones');
+const {deleteItem, writeTravelsJSON, insertItem} = require('./utils/funciones');
 
 // PUERTO DE CONEXION
 process.loadEnvFile();
@@ -47,15 +47,16 @@ app.get("/admin", (req, res) => {
 
 app.post("/insert", (req, res) => {
     // console.log(req.body);
-    let newTravel = req.body;
-    if (newTravel[0] != "/") {
-        newTravel.ruta = "/"+newTravel.ruta;
-    }
+    // let newTravel = req.body;
+    // if (newTravel[0] != "/") {
+    //     newTravel.ruta = "/"+newTravel.ruta;
+    // }
     
-    newTravel.precio = parseFloat(newTravel.precio);
-    newTravel.id = crypto.randomUUID();
-    jsonData.push(newTravel);
+    // newTravel.precio = parseFloat(newTravel.precio);
+    // newTravel.id = crypto.randomUUID();
+    // jsonData.push(newTravel);
     // console.log(jsonData);
+    insertItem (req.body, jsonData)
     writeTravelsJSON(jsonData);
     // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8");
     res.redirect("/admin");  
